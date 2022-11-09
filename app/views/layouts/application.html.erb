@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>LeicaStudio</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript"> (function() { var css = document.createElement('link'); css.href = 'https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'; css.rel = 'stylesheet'; css.type = 'text/css'; document.getElementsByTagName('head')[0].appendChild(css); })(); </script>
+    <%= stylesheet_link_tag "app"%>
+    <%= stylesheet_link_tag "theme"%>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
+      <a class="navbar-brand font-weight-bolder mr-3" href="/index/homepage"><%= image_tag("logo.png",width:"30",class:"rounded-circle mr-2") %></a>
+      <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarsDefault">
+        <ul class="navbar-nav mr-auto align-items-center">
+          <form class="bd-search hidden-sm-down">
+            <input type="text" class="form-control bg-graylight border-0 font-weight-bold" id="search-input" placeholder="为您推荐：海边" autocomplete="off">
+            <div class="dropdown-menu bd-search-results" id="search-results">
+            </div>
+          </form>
+        </ul>
+        <ul class="navbar-nav ml-auto align-items-center">
+          <li class="nav-item">
+          <a class="nav-link" href="#">
+            <%= image_tag("av.png",width:"30",class:"rounded-circle mr-2") %>
+            <span class="align-middle">Author</span>
+          </a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+    <footer class="footer pt-5 pb-5 text-center">    
+      <div class="container">  
+        <p>©
+          <span class="credits font-weight-bold">
+            <a target="_blank" class="text-dark" href="#"><u>中国科学院沈阳计算技术研究所</u> by 梁宇龙</a>
+          </span>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
