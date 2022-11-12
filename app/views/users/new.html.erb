@@ -1,0 +1,51 @@
+<section class="bg-gray200 pt-5 pb-5">
+    <div class="container">
+    	<div class="row justify-content-center">
+    		<div class="col-md-7">
+    			<article class="card">
+                    <div class="card-body px-md-5 py-5">
+                            <div class="mb-5">
+                                <h6 class="h3">Register</h6>
+                                <p class="text-muted mb-0">Sign in to your account to continue.</p>
+                            </div>
+                            <span class="clearfix"></span>
+                            <%= form_for @user, url: users_path,method: :post do |f|%>
+                                <div class="form-group">
+                                    <label class="form-control-label">Email address</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                        </div>
+                                        <%= f.text_field :username, class:"form-control", placeholder:"用户名"%>
+                                    </div>
+                                </div>
+                                <div class="form-group mb-0">
+                                    <div class="d-flex align-items-center justify-content-between">
+                                        <div>
+                                            <label class="form-control-label">Password</label>
+                                        </div>
+                                    </div>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-cogs" aria-hidden="true"></i></span>
+                                        </div>
+                                        <%= f.password_field :password,class:"form-control",placeholder:"密码"%>
+                                    </div>
+                                </div>
+                                <div class="mt-4">
+                                    <%= f.submit "快速注册",class:"btn btn-block btn-primary"%>
+                                </div>
+                            <% end -%>
+                        </div>
+    			</article>
+    		</div>
+    	</div>
+    </div>
+</section>
+<script>
+        feather.replace({
+            'width': '1em',
+            'height': '1em'
+        })
+</script>
+</div>
