@@ -15,7 +15,13 @@
 
   <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-      <a class="navbar-brand font-weight-bolder mr-3" href="/index/homepage"><%= image_tag("logo.png",width:"30",class:"rounded-circle mr-2") %></a>
+        <%if @user%>
+          <%= link_to image_tag("logo.png",width:"30",class:"rounded-circle mr-2"),{:action => "homepage",:controller => "index",:id => @user.id}%>
+        <%else%>
+          <a class="navbar-brand font-weight-bolder mr-3" href="/index/homepage">
+            <%= image_tag("logo.png",width:"30",class:"rounded-circle mr-2") %>
+          </a>
+        <%end%>
       <button class="navbar-light navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsDefault" aria-controls="navbarsDefault" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
       </button>
@@ -31,7 +37,13 @@
           <li class="nav-item">
           <a class="nav-link" href="/index/login">
             <%= image_tag("av.png",width:"30",class:"rounded-circle mr-2") %>
-            <span class="align-middle">Author</span>
+            <span class="align-middle">
+              <%if @user%>
+                <%= @user.username%>
+              <% else %>
+                未登录
+              <% end %>
+            </span>
           </a>
           </li>
         </ul>

@@ -10,14 +10,14 @@
                                 <p class="text-muted mb-0">Sign in to your account to continue.</p>
                             </div>
                             <span class="clearfix"></span>
-                            <form>
+                            <%= form_tag "loginCheck",method:'get' do %>
                                 <div class="form-group">
                                     <label class="form-control-label">Email address</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
                                         </div>
-                                        <input type="email" class="form-control" id="input-email" placeholder="name@example.com">
+                                        <%= text_field_tag :username,params[:username],class:"form-control",placeholder:"用户名"%>
                                     </div>
                                 </div>
                                 <div class="form-group mb-0">
@@ -30,15 +30,17 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-cogs" aria-hidden="true"></i></span>
                                         </div>
-                                        <input type="password" class="form-control" id="input-password" placeholder="Password">
+                                        <%= password_field_tag :password, params[:password],class:"form-control",placeholder:"密码"%>
                                     </div>
                                 </div>
                                 <div class="mt-4">
-                                    <button type="button" class="btn btn-block btn-primary">Sign in</button></div>
-                            </form>
+                                    <%= submit_tag '登录',class:"btn btn-block btn-primary"%>
+                                </div>
+                            <% end %>
                         </div>
                         <div class="card-footer px-md-5"><small>Not registered?</small>
-                            <a href="/index/register" class="small font-weight-bold">Create account</a></div>
+                            <a href="/users/new" class="small font-weight-bold">Create account</a>
+                        </div>
                     </div>
                 </div>
             </div>

@@ -6,7 +6,7 @@ class UsersController < ApplicationController
     def create
         @user = User.new(params.require(:user).permit(:username,:password))
         if @user.save
-            redirect_to "/index/homepage"
+            redirect_to :action => "homepage",:controller => "index",:id => @user.id
         else
             render action: :new
         end

@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   get 'opus/details'
   get 'index/homepage'
   get 'index/login'
-  get 'index/register'
+  get 'index/loginCheck'
 
   root "index#homepage"
 
