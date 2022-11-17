@@ -6,7 +6,7 @@ class IndexController < ApplicationController
   end
 
   def login
-
+    
   end
 
   def loginCheck

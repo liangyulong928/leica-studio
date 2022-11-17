@@ -34,24 +34,24 @@
           </form>
         </ul>
         <ul class="navbar-nav ml-auto align-items-center">
-          <%if @user%>
-          <li class="nav-item">
-            <%= link_to({:action => "show",:controller => "users",:id => @user.id,:bloger => @user.id},class:"nav-link") do%>
-              <%= image_tag("av.png",width:"30",class:"rounded-circle mr-2") %>
-              <span class="align-middle">
-                <%= @user.username%>
-              </span>
-            <% end %>
-          </li>
+          <% if @user && @user.id %>
+            <li class="nav-item">
+              <%= link_to({:action => "show",:controller => "users",:id => @user.id,:bloger => @user.id},class:"nav-link") do%>
+                <%= image_tag("av.png",width:"30",class:"rounded-circle mr-2") %>
+                <span class="align-middle">
+                  <%= @user.username%>
+                </span>
+              <% end %>
+            </li>
           <% else %>
-          <li class="nav-item">
-            <a class="nav-link" href="/index/login">
-              <%= image_tag("av.png",width:"30",class:"rounded-circle mr-2") %>
-              <span class="align-middle">
-                未登录
-              </span>
-            </a>
-          </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/index/login">
+                <%= image_tag("av.png",width:"30",class:"rounded-circle mr-2") %>
+                <span class="align-middle">
+                  未登录
+                </span>
+              </a>
+            </li>
           <% end %>
         </ul>
       </div>
