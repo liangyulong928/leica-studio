@@ -14,4 +14,20 @@
             这个人好懒啊～，什么都没写！
         </p>
     <% end %>
+    <p>
+        IP属地:
+        <% if @bloger.area%>
+            <%= @bloger.area%>
+        <% else %>
+            未知
+        <% end %>
+    </p>
+    <% if @bloger==@user %>
+        <%= link_to "上传作品",{:action => "new",:controller => "opus",:id => @user.id}%>
+    <% end %>
+    <br/>
+    <% @bloger.opus.each do |opu|%>
+        <%= image_tag opu.image %>
+    <% end %>
+    <br/>
 </div>

@@ -1,0 +1,10 @@
+<h1>
+    上传作品
+    <%= form_for @opu, url: opus_path,method: :post do |f|%>
+        <%= f.text_field :opusname, class:"form-control", placeholder:"作品名称"%>
+        <%= f.text_area :description,class:"form-control",placeholder:"描述"%>
+        <%= f.file_field :image%>
+        <%= f.hidden_field :user_id, value:@user.id.to_s %>
+        <%= f.submit "上传作品",class:"btn btn-block btn-primary"%>
+    <% end -%>
+</h1>

@@ -8,7 +8,8 @@ class CreateOpus < ActiveRecord::Migration[7.0]
       t.integer :focallength
       t.float :exposure
       t.float :aperture
-      t.integer :shutter
+      t.integer :shutter,default:0
+      t.references :user
       t.timestamps
     end
   end
