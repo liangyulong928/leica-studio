@@ -11,4 +11,9 @@ class UsersController < ApplicationController
             render action: :new
         end
     end
+
+    def show
+        @user = User.find(params[:id])
+        @bloger = User.find(params[:bloger])
+    end
 end
