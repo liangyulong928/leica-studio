@@ -10,7 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_11_12_140343) do
+ActiveRecord::Schema[7.0].define(version: 2022_11_17_013750) do
+  create_table "opus", force: :cascade do |t|
+    t.string "opusname"
+    t.string "description"
+    t.integer "pointheat"
+    t.integer "iso"
+    t.integer "focallength"
+    t.float "exposure"
+    t.float "aperture"
+    t.integer "shutter"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.text "description"

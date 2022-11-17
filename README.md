@@ -1,24 +1,4 @@
-# README
+### 《摄影爱好者论坛平台》——高级软件工程课程大作业
+#### 制作人：梁宇龙 by 中国科学院沈阳计算技术研究所
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+采用Ruby on Rails为核心架构搭建的摄影爱好者论坛平台。
