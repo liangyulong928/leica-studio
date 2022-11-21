@@ -3,6 +3,7 @@ class IndexController < ApplicationController
     if params[:id]
       @user = User.find(params[:id])
     end
+    @opus = Opu.all()
   end
 
   def login
