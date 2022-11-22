@@ -1,5 +1,7 @@
 class OpusController < ApplicationController
   def details
+    @opu = Opu.find(params[:opu_id])
+    @user = User.find(params[:id])
   end
 
   def new

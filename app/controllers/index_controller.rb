@@ -2,6 +2,8 @@ class IndexController < ApplicationController
   def homepage
     if params[:id]
       @user = User.find(params[:id])
+    else
+      @user = User.new()
     end
     @opus = Opu.all()
   end

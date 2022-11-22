@@ -14,11 +14,12 @@
     			<div class="card card-pin">
 					<%= image_tag opu.image,class:"card-img",alt:"Card image"%>
     				<div class="overlay">
-    					<h2 class="card-title title">Cool Title</h2>
-    					<div class="more">
-    						<a href="/opus/details">
-    						<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More </a>
-    					</div>
+    					<h2 class="card-title title"><%= opu.opusname%></h2>
+							<div class="more">
+								<%= link_to :action => "details",:controller => "opus",:id => @user.id,:opu_id => opu.id do%>
+									<i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More 
+								<% end %>
+							</div>
     				</div>
     			</div>
 				<% end %>
