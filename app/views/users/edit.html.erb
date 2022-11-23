@@ -1,0 +1,66 @@
+<section class="bg-gray200 pt-5 pb-5">
+    <div class="container">
+    	<div class="row justify-content-center">
+    		<div class="col-md-7">
+    			<article class="card">
+                    <div class="card-body px-md-5 py-5">
+                        <div class="mb-5">
+                            <h6 class="h3">编辑个人信息</h6>
+                        </div>
+                        <span class="clearfix"></span>
+                        <%= form_tag user_path(@user),:method => :put do%>
+                            <div class="form-group">
+                                <div class="mb-0">
+                                    <label class="form-control-label">昵称</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                        </div>
+                                        <%= text_field :user,"username",class:"form-control"%>
+                                    </div>
+                                </div>
+                                <div class="mb-0" style="padding-top:20px">
+                                    <label class="form-control-label">个人简介</label>
+                                    <div class="input-group">
+                                        <%= text_area :user,"description",class:"form-control",placeholder:"更好地描述自己可以获得更多关注哦～" %>
+                                    </div>
+                                </div>
+
+                                <div class="mb-0" style="padding-top:20px">
+                                    <label class="form-control-label">家乡</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                        </div>
+                                        <%= text_field :user,"area",class:"form-control"%>
+                                    </div>
+                                </div>
+
+                                <div class="mb-0" style="padding-top:20px">
+                                    <label class="form-control-label">生日</label>
+                                    <div class="input-group">
+                                        <div class="input-group-prepend">
+                                            <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
+                                        </div>
+                                        <%= text_field :user,"birthday",class:"form-control"%>
+                                    </div>
+                                </div>
+                                
+                                <div class="mt-4">
+                                    <%= submit_tag "保存",class:"btn btn-block btn-primary"%>
+                                </div>
+                            <div>
+                        <% end %>
+                    </div>
+    			</article>
+    		</div>
+    	</div>
+    </div>
+</section>
+<script>
+        feather.replace({
+            'width': '1em',
+            'height': '1em'
+        })
+</script>
+</div>

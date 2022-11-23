@@ -4,10 +4,9 @@
     <h1 class="font-weight-bold title">
         <%= @bloger.username %>
     </h1>
-    <% if @bloger.description%>
+    <% if @bloger.description && @bloger.description!=""%>
         <p>
-            <%= @bloger.username %>
-            I love Art, Web Design, Photography, Design, Illustration
+            个人简介：<%= @bloger.description %>
         </p>
     <% else %>
         <p>
@@ -16,14 +15,17 @@
     <% end %>
     <p>
         IP属地:
-        <% if @bloger.area%>
+        <% if @bloger.area && @bloger.area!=""%>
             <%= @bloger.area%>
         <% else %>
             未知
         <% end %>
     </p>
     <% if @bloger==@user %>
-        <%= link_to "上传作品",{:action => "new",:controller => "opus",:id => @user.id}%>
+        <%= link_to "上传作品",{:action => "new",:controller => "opus",:id => @user.id},class:"btn btn-sm btn-gray200"%>
+        <%= link_to edit_user_path(@user),class:"btn btn-sm btn-gray200" do%>
+			<i class="fa fa-external-link"></i> 编辑
+		<% end %>
     <% end %>
     <div class="row">
         <div class="card-columns" style="padding:20px">

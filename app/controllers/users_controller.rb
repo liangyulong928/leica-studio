@@ -16,4 +16,14 @@ class UsersController < ApplicationController
         @user = User.find(params[:id])
         @bloger = User.find(params[:bloger])
     end
+
+    def edit
+        @user = User.find(params[:id])
+    end
+
+    def update
+        @user = User.find(params[:id])
+        @user.update(params[:user].permit(:username,:description,:area,:birthday))
+        redirect_to :action => "show",:controller => "users",:id => @user.id,:bloger => @user.id
+    end
 end
