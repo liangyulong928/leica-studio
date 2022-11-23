@@ -1,9 +1,7 @@
 class OpusController < ApplicationController
   def details
     @opu = Opu.find(params[:opu_id])
-    if(params[:id])
-      @user = User.find(params[:id])
-    end
+    @user = User.find(params[:id])
   end
 
   def new
@@ -20,5 +18,16 @@ class OpusController < ApplicationController
     else
       render action: :new
     end
+  end
+
+  def edit
+    @opu = Opu.find(params[:id])
+    @user = @opu.user
+  end
+
+  def update
+    @opu = Opu.find(params[:id])
+    @opu.update(params[:opu].permit(:opusname,:description))
+    redirect_to :action => "details",:controller => "opus",:id => @opu.user.id,:opu_id => @opu.id
   end
 end
