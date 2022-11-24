@@ -15,6 +15,9 @@
 							<%= link_to edit_opu_path(@opu),class:"btn btn-sm btn-gray200" do%>
 								<i class="fa fa-external-link"></i> 编辑
 							<% end %>
+							<%= link_to action:"delete",id:@opu.id,class:"btn btn-sm btn-gray200" do%>
+								<i class="fa fa-external-link"></i> 删除
+							<% end %>
 						</small>
 					<% end %>
     			</div>

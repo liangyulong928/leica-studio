@@ -16,9 +16,13 @@
     <p>
         IP属地:
         <% if @bloger.area && @bloger.area!=""%>
-            <%= @bloger.area%>
+            <%= @bloger.area %>
         <% else %>
             未知
+        <% end %>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <% if @age %>
+            年龄：<%= @age %>
         <% end %>
     </p>
     <% if @bloger==@user %>
@@ -35,8 +39,9 @@
                     <div class="overlay">
                         <h2 class="card-title title">Cool Title</h2>
                         <div class="more">
-                            <a href="/opus/details">
-                            <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More </a>
+                            <%= link_to :action => "details",:controller => "opus",:id => @user.id,:opu_id => opu.id do%>
+							    <i class="fa fa-arrow-circle-o-right" aria-hidden="true"></i> More 
+							<% end %>
                         </div>
                     </div>
                 </div>

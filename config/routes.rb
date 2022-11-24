@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   get 'index/homepage'
   get 'index/login'
   get 'index/loginCheck'
+  get 'opus/delete'
 
   root "index#homepage"
 

@@ -27,25 +27,15 @@
                                 </div>
 
                                 <div class="mb-0" style="padding-top:20px">
-                                    <label class="form-control-label">家乡</label>
-                                    <div class="input-group">
-                                        <div class="input-group-prepend">
-                                            <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
-                                        </div>
-                                        <%= text_field :user,"area",class:"form-control"%>
-                                    </div>
-                                </div>
-
-                                <div class="mb-0" style="padding-top:20px">
                                     <label class="form-control-label">生日</label>
                                     <div class="input-group">
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fa fa-users" aria-hidden="true"></i></span>
                                         </div>
-                                        <%= text_field :user,"birthday",class:"form-control"%>
+                                        <%= date_field :user,"birthday",class:"form-control",id:"date"%>
                                     </div>
                                 </div>
-                                
+
                                 <div class="mt-4">
                                     <%= submit_tag "保存",class:"btn btn-block btn-primary"%>
                                 </div>

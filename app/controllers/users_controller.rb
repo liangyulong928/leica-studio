@@ -1,3 +1,5 @@
+require "open-uri"
+
 class UsersController < ApplicationController
     def new
         @user = User.new
@@ -15,6 +17,10 @@ class UsersController < ApplicationController
     def show
         @user = User.find(params[:id])
         @bloger = User.find(params[:bloger])
+        if @user.birthday && @user.birthday!=""
+            today  = Date.today
+            @age = today.year - @user.birthday.year
+        end
     end
 
     def edit

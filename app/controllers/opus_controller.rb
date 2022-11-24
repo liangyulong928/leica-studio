@@ -30,4 +30,11 @@ class OpusController < ApplicationController
     @opu.update(params[:opu].permit(:opusname,:description))
     redirect_to :action => "details",:controller => "opus",:id => @opu.user.id,:opu_id => @opu.id
   end
+
+  def delete
+    @opu = Opu.find(params[:id])
+    @user = @opu.user
+    @opu.destroy
+    redirect_to :action => "show",:controller => "users",:id => @user.id,:bloger => @user.id
+  end
 end
